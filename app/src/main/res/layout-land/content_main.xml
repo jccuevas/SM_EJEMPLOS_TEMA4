@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="es.ujaen.ejemplostema4.MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/fragmento_lista"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:paddingBottom="@dimen/fragment_vertical_margin"
+        android:paddingLeft="@dimen/fragment_horizontal_margin"
+        android:paddingRight="@dimen/fragment_horizontal_margin"
+        android:paddingTop="@dimen/fragment_vertical_margin">
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fragmento_detalles"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@color/colorAccent">
+
+    </FrameLayout>
+</LinearLayout>

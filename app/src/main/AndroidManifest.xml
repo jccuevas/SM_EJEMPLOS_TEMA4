@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="es.ujaen.ejemplostema4">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.menu.Graficos"
+            android:label="@string/app_graficos"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.example.menu.Help"
+            android:label="@string/app_help"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.example.menu.Fragmentos"
+            android:label="@string/app_fragments"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.example.menu.FragmentosDinamicos"
+            android:label="@string/app_fragments_dinamicos"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".MusicActivity"
+            android:label="@string/app_music_activity"
+            android:theme="@style/AppTheme"/>
+    </application>
+
+</manifest>

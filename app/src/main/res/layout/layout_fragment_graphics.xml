@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_uja">
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/inset_cielo"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/fragmentinfo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="@string/graphics_inset"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/graphics_clip"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <ImageView
+            android:id="@+id/imageView_logoandroid"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:contentDescription="@string/contentdescription_logoandroid"
+            android:scaleType="fitCenter"
+            android:src="@drawable/clip1" />
+
+        <TextView
+            android:id="@+id/wifipower_frecuency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/graphics_scale"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <ImageView
+            android:id="@+id/ImageView_logoandroidscale"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:contentDescription="@string/contentdescription_logoandroid"
+            android:scaleType="fitCenter"
+            android:src="@drawable/scale1" />
+
+        <TextView
+            android:id="@+id/graficos_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="@style/blueMed" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

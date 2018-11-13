@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    android:paddingLeft="@dimen/fragment_horizontal_margin"
+    android:paddingRight="@dimen/fragment_horizontal_margin"
+    android:paddingEnd="@dimen/fragment_horizontal_margin"
+    android:paddingStart="@dimen/fragment_horizontal_margin"
+    android:paddingTop="@dimen/fragment_vertical_margin"
+    android:paddingBottom="@dimen/fragment_vertical_margin">
+
+    <TextView
+        android:id="@+id/graficos_label_tween"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/graficos_tween"
+        android:textAppearance="@style/blueLarge"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/imageViewTransition"
+        android:layout_marginBottom="@dimen/fragment_vertical_margin"
+        android:layout_marginTop="@dimen/fragment_vertical_margin" />
+
+    <Button
+        android:id="@+id/graficos_button_tween"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_disco"
+        android:layout_alignBottom="@+id/imageViewTween"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/graficos_label_transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/graficos_transition"
+        android:textAppearance="@style/blueLarge"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/graficos_button_transiton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/button_disco"
+        android:layout_alignBottom="@+id/imageViewTransition"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/imageViewTransition"
+        android:layout_width="@dimen/animaciones"
+        android:layout_height="@dimen/animaciones"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/content_graficos_transicion"
+        android:scaleType="fitXY"
+        android:src="@drawable/transition_1"
+        android:layout_below="@+id/graficos_label_transition"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/graficos_label_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/graficos_frame"
+        android:textAppearance="@style/blueLarge"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/imageViewTween"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/fragment_vertical_margin"
+        android:layout_marginTop="@dimen/fragment_vertical_margin" />
+
+    <ImageView
+        android:id="@+id/imageViewFrame"
+        android:layout_width="@dimen/animaciones"
+        android:layout_height="@dimen/animaciones"
+        android:contentDescription="@string/content_graficos_frame"
+        android:src="@anim/frame"
+        android:layout_below="@+id/graficos_label_frame"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/graficos_button_frameAnimation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_disco"
+        android:layout_alignBottom="@+id/imageViewFrame"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/imageViewTween"
+        android:layout_width="@dimen/animaciones"
+        android:layout_height="@dimen/animaciones"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/content_graficos_tween"
+        android:scaleType="fitXY"
+        android:src="@drawable/android_logoblack"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
