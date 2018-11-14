@@ -159,61 +159,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_controls) {//Opción mostrar fragmento de controles básicos
-
-            //Se obtiene el fragmento que se esté mostrando actualemente
-            FragmentTransaction ft = mFM.beginTransaction();
-            Fragment f = mFM.findFragmentById(R.id.fragmento_lista);
-            FragmentoControles controles = new FragmentoControles();
-            if (f != null) {//Si ya hay un fragmento se elimina
-                ft.remove(f);
-                ft.replace(R.id.fragmento_lista, controles);
-            } else {//Si no hay fragmento, se añade simplemente
-                ft.add(R.id.fragmento_lista, controles, "controles");
-            }
-            ft.commit();
-        }else
-        if (id == R.id.nav_almacenamiento) {//Opción mostrar fragmento de almacenamiento
-
-            //Se obtiene el fragmento que se esté mostrando actualemente
-            FragmentTransaction ft = mFM.beginTransaction();
-            Fragment f = mFM.findFragmentById(R.id.fragmento_lista);
-            FragmentoAlmacenamiento almacenamiento = new FragmentoAlmacenamiento();
-            if (f != null) {//Si ya hay un fragmento se elimina
-                ft.remove(f);
-                ft.replace(R.id.fragmento_lista, almacenamiento);
-            } else {//Si no hay fragmento, se añade simplemente
-                ft.add(R.id.fragmento_lista, almacenamiento, "almacenamiento");
-            }
-            ft.commit();
-
-        } else if (id == R.id.nav_layouts) {
-            FragmentTransaction ft = mFM.beginTransaction();
-            Fragment f = mFM.findFragmentById(R.id.fragmento_lista);
-            FragmentoLista lista = new FragmentoLista();
-            if (f != null) {
-                ft.remove(f);
-                ft.replace(R.id.fragmento_lista, lista);
-            } else {
-                ft.add(R.id.fragmento_lista, lista, "lista");
-            }
-
-
-            if (findViewById(R.id.fragmento_detalles) != null) {
-                FragmentoPanel panel = (FragmentoPanel) getSupportFragmentManager().findFragmentByTag(FRAGMENTO_DETALLES);
-                if (panel == null) {
-                    panel = new FragmentoPanel();
-                    ft.add(R.id.fragmento_detalles, panel, FRAGMENTO_DETALLES);
-                    ft.addToBackStack(FRAGMENTO_DETALLES);
-                }
-            }
-
-            ft.commit();
-
-        } else if (id == R.id.nav_fragmentosdinamicos) {
-            startActivity(new Intent(this, FragmentosDinamicos.class));
-
-        } else if (id == R.id.nav_about) {
+     if (id == R.id.nav_about) {
             FragmentoAcercade fragmentoAcercade = FragmentoAcercade.newInstance("uno", "dos");
             fragmentoAcercade.show(mFM, "acercade");
 

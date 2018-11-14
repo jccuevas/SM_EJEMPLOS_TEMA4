@@ -5,22 +5,6 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_controls"
-            android:icon="@drawable/ic_menu_controls"
-            android:title="@string/navmenu_controls" />
-        <item
-            android:id="@+id/nav_layouts"
-            android:icon="@drawable/ic_menu_fragmentos"
-            android:title="@string/navmenu_linearlayout" />
-        <item
-            android:id="@+id/nav_almacenamiento"
-            android:icon="@drawable/ic_action_store"
-            android:title="@string/navmenu_almacenamiento" />
-        <item
-            android:id="@+id/nav_fragmentosdinamicos"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/navmenu_fragdinamicos" />
-        <item
             android:id="@+id/nav_animaciones"
             android:icon="@drawable/ic_menu_imagen"
             android:title="@string/navmenu_animaciones" />
@@ -37,18 +21,5 @@
             android:icon="@drawable/ic_menu_music"
             android:title="@string/navmenu_audio" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_about"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/navmenu_about" />
-        </menu>
-    </item>
 
 </menu>

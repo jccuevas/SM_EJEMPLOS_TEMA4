@@ -25,21 +25,22 @@ public class FragmentoInfo extends Fragment {
         mInfo = (WebView) fragment.findViewById(R.id.fragmentinfo_helptext);
 
 
+        mInfo.loadUrl("file:///android_asset/www/help.html");
 
-        BufferedReader bis = new BufferedReader(new InputStreamReader(getContext().getResources().openRawResource(R.raw.help)));
-        String datos="";
-        String linea="";
-
-        try {
-            linea=bis.readLine();
-            while((linea=bis.readLine())!=null){
-                datos=datos+linea;
-            }
-            bis.close();
-            mInfo.loadData(datos,"text/html","UTF-8");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        BufferedReader bis = new BufferedReader(new InputStreamReader(getContext().getResources().openRawResource(R.raw.help)));
+//        String datos="";
+//        String linea="";
+//
+//        try {
+//            linea=bis.readLine();
+//            while((linea=bis.readLine())!=null){
+//                datos=datos+linea;
+//            }
+//            bis.close();
+//            mInfo.loadData(datos,"text/html","UTF-8");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         return fragment;
 		
 	}
