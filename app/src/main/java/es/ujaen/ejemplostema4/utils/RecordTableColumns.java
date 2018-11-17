@@ -1,7 +1,7 @@
 package es.ujaen.ejemplostema4.utils;
 
 public interface RecordTableColumns {
-	public static final String 	COLUMN_ID 		= "_id";
+	String 	COLUMN_ID 		= "_id";
 	public static final String 	COLUMN_TAG = "label";
 	public static final String 	COLUMN_VALUE 	= "value";
 	

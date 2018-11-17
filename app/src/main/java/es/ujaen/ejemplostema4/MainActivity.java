@@ -24,7 +24,7 @@ import android.view.MenuItem;
 import com.example.menu.FragmentosDinamicos;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, FragmentoControles.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
 
     public static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
     public static final int MENU_CONTEXTUAL_AYUDA = 1;
 
     FragmentManager mFM = null;
-    private View mLayout=null;
+    private View mLayout = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,67 +157,59 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        FragmentTransaction ft = mFM.beginTransaction();
+        Fragment f = mFM.findFragmentById(R.id.fragmento_lista);
+        switch (item.getItemId()) {
+            case R.id.nav_about:
+                FragmentoAcercade fragmentoAcercade = FragmentoAcercade.newInstance("uno", "dos");
+                fragmentoAcercade.show(mFM, "acercade");
+                break;
+            case R.id.nav_graficos:
 
-     if (id == R.id.nav_about) {
-            FragmentoAcercade fragmentoAcercade = FragmentoAcercade.newInstance("uno", "dos");
-            fragmentoAcercade.show(mFM, "acercade");
+                FragmentoGraficos graficos = new FragmentoGraficos();
+                if (f != null) {
+                    ft.remove(f);
+                    ft.replace(R.id.fragmento_lista, graficos);
+                } else {
+                    ft.add(R.id.fragmento_lista, graficos, "graficos");
+                }
+                ft.commit();
+                break;
+            case R.id.nav_customview:
+                FragmentoCustomView customView = new FragmentoCustomView();
+                if (f != null) {
+                    ft.remove(f);
+                    ft.replace(R.id.fragmento_lista, customView);
+                } else {
+                    ft.add(R.id.fragmento_lista, customView, "customView");
+                }
+                ft.commit();
+                break;
+            case R.id.nav_animaciones:
+                FragmentoAnimaciones animaciones = new FragmentoAnimaciones();
+                if (f != null) {
+                    ft.remove(f);
+                    ft.replace(R.id.fragmento_lista, animaciones);
+                } else {
+                    ft.add(R.id.fragmento_lista, animaciones, "animaciones");
+                }
+                ft.commit();
+                break;
+            case R.id.nav_audio:
 
-        } else if (id == R.id.nav_graficos) {
-            FragmentTransaction ft = mFM.beginTransaction();
-            Fragment f = mFM.findFragmentById(R.id.fragmento_lista);
-            FragmentoGraficos graficos = new FragmentoGraficos();
-            if (f != null) {
-                ft.remove(f);
-                ft.replace(R.id.fragmento_lista, graficos);
-            } else {
-                ft.add(R.id.fragmento_lista, graficos, "graficos");
-            }
-            ft.commit();
+                Intent music = new Intent(this, MusicActivity.class);
+                startActivity(music);
+                break;
+            case R.id.nav_recordaudio:
 
-        } else if (id == R.id.nav_customview) {
-            FragmentTransaction ft = mFM.beginTransaction();
-            Fragment f = mFM.findFragmentById(R.id.fragmento_lista);
-            FragmentoCustomView customView = new FragmentoCustomView();
-            if (f != null) {
-                ft.remove(f);
-                ft.replace(R.id.fragmento_lista, customView);
-            } else {
-                ft.add(R.id.fragmento_lista, customView, "customView");
-            }
-            ft.commit();
-
-        } else if (id == R.id.nav_animaciones) {
-            FragmentTransaction ft = mFM.beginTransaction();
-            Fragment f = mFM.findFragmentById(R.id.fragmento_lista);
-            FragmentoAnimaciones animaciones = new FragmentoAnimaciones();
-            if (f != null) {
-                ft.remove(f);
-                ft.replace(R.id.fragmento_lista, animaciones);
-            } else {
-                ft.add(R.id.fragmento_lista, animaciones, "animaciones");
-            }
-            ft.commit();
-
-        } else if (id == R.id.nav_audio) {
-
-            Intent music = new Intent(this,MusicActivity.class);
-            startActivity(music);
-            //  showAudioFragment();
+                Intent record = new Intent(this, RecordAudioActivity.class);
+                startActivity(record);
+                //  showAudioFragment();
+                break;
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-
-    @Override
-    /**
-     * Método que podrá ser ejecutado cuando se invoque desde el fragmento FragmentoControles
-     * Este es un ejemplo de comunicación entre Actividades y Fragmentos
-     */
-    public void onFragmentInteraction(Uri uri) {
-    //TODO Agregar una operación
-    }
 }

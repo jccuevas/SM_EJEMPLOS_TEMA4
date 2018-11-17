@@ -21,26 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name="com.example.menu.Graficos"
-            android:label="@string/app_graficos"
-            android:theme="@style/AppTheme"/>
         <activity
             android:name="com.example.menu.Help"
             android:label="@string/app_help"
             android:theme="@style/AppTheme"/>
-        <activity
-            android:name="com.example.menu.Fragmentos"
-            android:label="@string/app_fragments"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name="com.example.menu.FragmentosDinamicos"
-            android:label="@string/app_fragments_dinamicos"
-            android:theme="@style/AppTheme"/>
+
         <activity
             android:name=".MusicActivity"
             android:label="@string/app_music_activity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".RecordAudioActivity"
+            android:label="@string/app_recordaudio_activity"
             android:theme="@style/AppTheme"/>
     </application>
 

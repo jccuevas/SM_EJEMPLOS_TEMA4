@@ -101,7 +101,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:contentDescription="@string/content_graficos_frame"
-                android:src="@anim/frame" />
+                android:src="@drawable/frame" />
 
             <Button
                 android:id="@+id/graficos_button_frameAnimation"

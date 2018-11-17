@@ -116,42 +116,6 @@
     </LinearLayout>
 
     <TextView
-        android:text="@string/music_activity_record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/music_play_record"
-        android:textAppearance="@style/blueLarge"
-        android:layout_below="@+id/main_play_soundpool"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_action_microphone"
-        android:id="@+id/music_record"
-        android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/contentdescription_music_grabar"
-        android:layout_below="@+id/main_play_soundpool"
-        android:layout_toRightOf="@+id/music_play_record"
-        android:layout_toEndOf="@+id/music_play_record"
-        android:layout_marginLeft="@dimen/fragment_horizontal_margin"
-        android:layout_marginStart="@dimen/fragment_horizontal_margin" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_media_play"
-        android:id="@+id/music_play_recorded"
-        android:background="@color/colorPrimaryDark"
-        android:contentDescription="@string/contentdescription_music_grabar"
-        android:layout_below="@+id/main_play_soundpool"
-        android:layout_toRightOf="@+id/music_record"
-        android:layout_toEndOf="@+id/music_record"
-        android:layout_marginStart="@dimen/fragment_horizontal_margin"
-        android:layout_marginLeft="@dimen/fragment_horizontal_margin" />
-
-    <TextView
         android:text="@string/music_activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

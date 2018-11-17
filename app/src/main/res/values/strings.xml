@@ -23,12 +23,9 @@
     <string name="app_graficos">Ejemplos gráficos</string>
     <string name="app_help">Ayuda</string>
     <string name="app_ficheros">Almacenamiento de Datos</string>
-    <string name="app_fragments">Manejo de fragmentos</string>
-    <string name="app_fragments_dinamicos">Manejo de fragmentos dinámicos</string>
-    <string name="app_networking">Networking</string>
-    <string name="app_connectivity">Conectividad</string>
-    <string name="app_provideruse">Uso de un Proveedor de Contenido</string>
+
     <string name="app_music_activity">Reproducción de música</string>
+    <string name="app_recordaudio_activity">Grabación de audio</string>
 
     <string name="title_activity_menus">Menus</string>
 
