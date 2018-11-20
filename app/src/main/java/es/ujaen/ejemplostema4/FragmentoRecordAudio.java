@@ -8,20 +8,18 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import java.io.File;
 import java.io.IOException;
 
-import es.ujaen.ejemplostema4.sound.Sounds;
-
-public class RecordAudioActivity extends AppCompatActivity {
+public class FragmentoRecordAudio extends Fragment {
     public static final int REQUEST_PERMISSION_RECORDAUDIO = 2;
 
     private ImageView mPlayRaw = null;
@@ -47,16 +45,18 @@ public class RecordAudioActivity extends AppCompatActivity {
     private boolean mRecording = false;
     private boolean mPlaying = false;
 
+    private View mFragmentView = null;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recordaudio);
-        mMainView = findViewById(R.id.content_main);
-        audio = getFilesDir();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mMainView= inflater.inflate(R.layout.activity_recordaudio, container, false);
+
+        audio = getActivity().getFilesDir();
         mRecordPath =audio.getPath() + "/audioEjemplos2.3gpp";
 
 
-        mRecord = (ImageView) findViewById(R.id.music_record);
+        mRecord = mMainView.findViewById(R.id.music_record);
         mRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,13 +66,15 @@ public class RecordAudioActivity extends AppCompatActivity {
             }
         });
 
-        mPlayRecord = (ImageView) findViewById(R.id.music_play_recorded);
+        mPlayRecord = mMainView.findViewById(R.id.music_play_recorded);
         mPlayRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onPlay();
             }
         });
+
+        return mMainView;
     }
 
     private void onRecord(boolean start) {
@@ -104,7 +106,7 @@ public class RecordAudioActivity extends AppCompatActivity {
             mPlayerRecorded.prepare();
             mPlayerRecorded.start();
             mPlaying=true;
-            mPlayRecord.setImageDrawable(ContextCompat.getDrawable(RecordAudioActivity.this, R.drawable.ic_stop));
+            mPlayRecord.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_stop));
             mPlayerRecorded.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
@@ -121,7 +123,7 @@ public class RecordAudioActivity extends AppCompatActivity {
             mPlayerRecorded.release();
             mPlayerRecorded = null;
             mPlaying = false;
-            mPlayRecord.setImageDrawable(ContextCompat.getDrawable(RecordAudioActivity.this, android.R.drawable.ic_media_play));
+            mPlayRecord.setImageDrawable(ContextCompat.getDrawable(getContext(), android.R.drawable.ic_media_play));
         }
 
     }
@@ -157,25 +159,25 @@ public class RecordAudioActivity extends AppCompatActivity {
 
 
     public void checkPermissionsRecord() {
-        if (ContextCompat.checkSelfPermission(RecordAudioActivity.this,
+        if (ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
 
             // Se pregunta si debemos poner una explicación
-            if (ActivityCompat.shouldShowRequestPermissionRationale(RecordAudioActivity.this,
+            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                     Manifest.permission.RECORD_AUDIO)) {
 
                 // Se muestra una breve explicación de por qué solicitar el permiso
                 Snackbar message = Snackbar.make(mMainView, R.string.fragment_record_permission,
                         Snackbar.LENGTH_LONG);
                 message.show();
-                ActivityCompat.requestPermissions(RecordAudioActivity.this,
+                ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.RECORD_AUDIO},
                         REQUEST_PERMISSION_RECORDAUDIO);
             } else {
 
                 // No se necesita explicación, se pasa a solicitar el permiso.
-                ActivityCompat.requestPermissions(RecordAudioActivity.this,
+                ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.RECORD_AUDIO},
                         REQUEST_PERMISSION_RECORDAUDIO);
 
@@ -216,7 +218,7 @@ public class RecordAudioActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
 
-        mMPlayer = MediaPlayer.create(RecordAudioActivity.this, R.raw.audio_vivaldi);
+        mMPlayer = MediaPlayer.create(getContext(), R.raw.audio_vivaldi);
         mMPlayerEx = null;
     }
 
@@ -231,7 +233,7 @@ public class RecordAudioActivity extends AppCompatActivity {
             } catch (IllegalStateException ex) {
                 Log.d("MusicActivity", "IllegalStateException");
             } finally {
-                mPlayExternal.setImageDrawable(ContextCompat.getDrawable(RecordAudioActivity.this, android.R.drawable.ic_media_play));
+                mPlayExternal.setImageDrawable(ContextCompat.getDrawable(getContext(), android.R.drawable.ic_media_play));
             }
         }
         if (mMPlayerEx != null) {
@@ -242,31 +244,10 @@ public class RecordAudioActivity extends AppCompatActivity {
             } catch (IllegalStateException ex) {
                 Log.d("MusicActivity", "IllegalStateException");
             } finally {
-                mPlayRaw.setImageDrawable(ContextCompat.getDrawable(RecordAudioActivity.this, android.R.drawable.ic_media_play));
+                mPlayRaw.setImageDrawable(ContextCompat.getDrawable(getContext(), android.R.drawable.ic_media_play));
             }
         }
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.menu_help) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -15,6 +15,7 @@
     <string name="navmenu_fragdinamicos">Fragmentos dinámicos</string>
     <string name="navmenu_about">Acerca de...</string>
     <string name="navmenu_audio">Reproducción de audio</string>
+    <string name="navmenu_grabaraudio">Grabación de audio</string>
     <string name="navmenu_graficos">Ejemplos gráficos</string>
     <string name="navmenu_animaciones">Animaciones de drawables</string>
     <string name="navmenu_customview">View personalizado</string>

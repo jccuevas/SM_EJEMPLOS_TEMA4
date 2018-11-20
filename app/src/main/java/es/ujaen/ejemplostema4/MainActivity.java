@@ -2,7 +2,6 @@ package es.ujaen.ejemplostema4;
 
 import android.Manifest;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,8 +19,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.example.menu.FragmentosDinamicos;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -196,14 +193,29 @@ public class MainActivity extends AppCompatActivity
                 ft.commit();
                 break;
             case R.id.nav_audio:
-
-                Intent music = new Intent(this, MusicActivity.class);
-                startActivity(music);
+                FragmentoMusic music = new FragmentoMusic();
+                if (f != null) {
+                    ft.remove(f);
+                    ft.replace(R.id.fragmento_lista, music);
+                } else {
+                    ft.add(R.id.fragmento_lista, music, "music");
+                }
+                ft.commit();
+//                Intent music = new Intent(this, MusicActivity.class);
+//                startActivity(music);
                 break;
             case R.id.nav_recordaudio:
+                FragmentoRecordAudio recordaudio = new FragmentoRecordAudio();
+                if (f != null) {
+                    ft.remove(f);
+                    ft.replace(R.id.fragmento_lista, recordaudio);
+                } else {
+                    ft.add(R.id.fragmento_lista, recordaudio, "recordaudio");
+                }
+                ft.commit();
 
-                Intent record = new Intent(this, RecordAudioActivity.class);
-                startActivity(record);
+//                Intent record = new Intent(this, RecordAudioActivity.class);
+  //              startActivity(record);
                 //  showAudioFragment();
                 break;
         }

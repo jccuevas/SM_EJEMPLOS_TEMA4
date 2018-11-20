@@ -20,7 +20,7 @@
         <item
             android:id="@+id/nav_recordaudio"
             android:icon="@drawable/ic_menu_record"
-            android:title="@string/navmenu_audio" />
+            android:title="@string/navmenu_grabaraudio" />
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_about"
