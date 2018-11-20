@@ -50,7 +50,7 @@ public class FragmentoRecordAudio extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mMainView= inflater.inflate(R.layout.activity_recordaudio, container, false);
+        mMainView= inflater.inflate(R.layout.layout_fragment_recordaudio, container, false);
 
         audio = getActivity().getFilesDir();
         mRecordPath =audio.getPath() + "/audioEjemplos2.3gpp";

@@ -21,19 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.menu.Help"
-            android:label="@string/app_help"
-            android:theme="@style/AppTheme"/>
 
-        <activity
-            android:name=".MusicActivity"
-            android:label="@string/app_music_activity"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".RecordAudioActivity"
-            android:label="@string/app_recordaudio_activity"
-            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>
