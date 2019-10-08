@@ -1,8 +1,14 @@
 # SM_EJEMPLOS_TEMA4
 Ejemplos Tema 4 de Servicios Móviles
 
-Ejemplo el protocolo dle Ejericio 2
+Objetivos del tema
+- Conocer las bases del manejo de gráficos en 2-D de Android.
+- Conocer las bases de la animación de gráficos.
+- Conocer el manejo del audio básico.
+- Conocer las bases del streaming de contenido multimedia.
 
+
+=Ejemplo el protocolo del Ejericio 2=
 
 PROTOCOLO = PETICION / RESPUESTA
 
