@@ -1,11 +1,23 @@
 # SM_EJEMPLOS_TEMA4
 Ejemplos Tema 4 de Servicios Móviles
 
-Objetivos del tema
+=Objetivos del tema=
 - Conocer las bases del manejo de gráficos en 2-D de Android.
 - Conocer las bases de la animación de gráficos.
 - Conocer el manejo del audio básico.
 - Conocer las bases del streaming de contenido multimedia.
+=Contenido=
+- Gráficos 2-D:
+  - Canvas
+  - Drawable
+  - Animación de Drawables
+  - Frame Animation
+  - Animación de Vistas
+  - Tween animation
+- Multimedia
+  - Media player
+  - PlayBack de audio y video
+  - Captura de audio
 
 
 =Ejemplo el protocolo del Ejericio 2=
