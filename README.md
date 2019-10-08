@@ -1,12 +1,16 @@
 # SM_EJEMPLOS_TEMA4
-Ejemplos Tema 4 de Servicios Móviles
 
-=Objetivos del tema=
+Ejemplos del Tema 4 Servicios y comunicaciones multimedia para terminales móviles
+- Asignatura: Servicios Móviles
+- Grado en Ingeniería Telemática
+- Universidad de Jaén.
+
+##Objetivos del tema
 - Conocer las bases del manejo de gráficos en 2-D de Android.
 - Conocer las bases de la animación de gráficos.
 - Conocer el manejo del audio básico.
 - Conocer las bases del streaming de contenido multimedia.
-=Contenido=
+##Contenido=
 - Gráficos 2-D:
   - Canvas
   - Drawable
@@ -19,8 +23,7 @@ Ejemplos Tema 4 de Servicios Móviles
   - PlayBack de audio y video
   - Captura de audio
 
-
-=Ejemplo el protocolo del Ejericio 2=
+###Ejemplo el protocolo del Ejericio 2
 
 PROTOCOLO = PETICION / RESPUESTA
 
